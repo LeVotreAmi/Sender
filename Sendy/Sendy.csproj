@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AEC80C3-309D-4AEA-9FCE-BBF9CF940A49}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sendy</RootNamespace>
+    <AssemblyName>Sendy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.Redemption">
+      <HintPath>..\..\..\..\Downloads\Redemption\Interop.Redemption.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Core\ObservableObject.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MVVM\ViewModel\ConvertViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\CreateViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\DirectTableViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\DirectViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\InfoViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SettingsViewModel.cs" />
+    <Compile Include="MVVM\View\ConvertView.xaml.cs">
+      <DependentUpon>ConvertView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\CreateView.xaml.cs">
+      <DependentUpon>CreateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DirectTableView.xaml.cs">
+      <DependentUpon>DirectTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DirectView.xaml.cs">
+      <DependentUpon>DirectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\InfoView.xaml.cs">
+      <DependentUpon>InfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeWorker\Converter.cs" />
+    <Compile Include="OfficeWorker\Creater.cs" />
+    <Compile Include="OfficeWorker\Extensions.cs" />
+    <Compile Include="OfficeWorker\Office.cs" />
+    <Compile Include="OfficeWorker\Sender.cs" />
+    <Compile Include="Theme\Colors.cs" />
+    <Compile Include="Theme\Images.cs" />
+    <Compile Include="Theme\MenuItems.cs" />
+    <Compile Include="UserControls\CheckGender.xaml.cs">
+      <DependentUpon>CheckGender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Complete.xaml.cs">
+      <DependentUpon>Complete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DirectTable.xaml.cs">
+      <DependentUpon>DirectTable.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MVVM\View\ConvertView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\CreateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\DirectTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\DirectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\InfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ColorsTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ConvertElementsTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\FontsTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\InfoTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\StyleTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\CheckGender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Complete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DirectTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Resources\Fonts\Raleway\Raleway-Italic-VariableFont_wght.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\Raleway-VariableFont_wght.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Black.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-BlackItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Bold.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-BoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-ExtraBold.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-ExtraBoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-ExtraLight.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-ExtraLightItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Italic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Light.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-LightItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Medium.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-MediumItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Regular.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-SemiBold.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-SemiBoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-Thin.ttf" />
+    <Resource Include="Resources\Fonts\Raleway\static\Raleway-ThinItalic.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\convert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\excel.png" />
+    <Resource Include="Resources\Images\folder.png" />
+    <Resource Include="Resources\Images\word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Raleway\OFL.txt" />
+    <Resource Include="Resources\Fonts\Raleway\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\dropicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\excelIcon.png" />
+    <Resource Include="Resources\Images\excelIconOk.png" />
+    <Resource Include="Resources\Images\folderIcon.png" />
+    <Resource Include="Resources\Images\folderIconOk.png" />
+    <Resource Include="Resources\Images\wordIcon.png" />
+    <Resource Include="Resources\Images\wordIconOk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CheckBoxNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CheckBoxChecked.png" />
+    <Resource Include="Resources\Images\CheckBoxHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BtnCompleteCreate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\close2Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\close2Press.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

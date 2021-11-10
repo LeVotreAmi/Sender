@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="Raleway">/Resources/Fonts/Raleway/static/#Raleway</FontFamily>
+    <FontFamily x:Key="Raleway-Medium">/Resources/Fonts/Raleway/static/#Raleway Medium</FontFamily>
+    <FontFamily x:Key="Raleway-Bold">/Resources/Fonts/Raleway/static/#Raleway Bold</FontFamily>
+    <FontFamily x:Key="Raleway-ExtraBold">/Resources/Fonts/Raleway/static/#Raleway ExtraBold</FontFamily>
+</ResourceDictionary>
